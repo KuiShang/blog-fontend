@@ -3,6 +3,22 @@ import serverConfig from '../service-config'
 import Const from '../utils/const/index.js'
 const root = serverConfig.api
 
+// axios 配置
+axios.defaults.timeout = 5000
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
+// axios.defaults.baseURL = 'https://api.nashi8.com/'
+
+// 返回状态判断
+axios.interceptors.response.use((res) => {
+  if (res.status === 200) {
+    return res
+  } else {
+    return Promise.reject(res)
+  }
+}, (error) => {
+  return Promise.reject(error)
+})
+
 function getUrl (path) {
   if (path.startsWith('http:') || path.startsWith('https:')) {
     return path

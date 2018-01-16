@@ -3,7 +3,7 @@ import apiConfig from '../service-config'
 
 export default {
   list (currentPage, pageSize, params) {
-    return dao.page('article/list', currentPage, pageSize, params)
+    return dao.page('v6/article/list', currentPage, pageSize, params)
   },
   get (id) {
     return dao.get('article/detail/' + id)

@@ -1,4 +1,3 @@
 export default {
-    TOKEN_KEY: 'token_guest'
-  }
-  
+  TOKEN_KEY: 'token_guest'
+}
