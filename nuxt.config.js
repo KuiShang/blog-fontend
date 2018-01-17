@@ -22,6 +22,18 @@ module.exports = {
   */
   build: {
     vendor: ['axios'],
+    loaders: [
+      {
+        test: /\.(scss|sass)$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'sass-loader'
+        }]
+      }
+    ],
     /*
     ** Run ESLINT on save
     */
