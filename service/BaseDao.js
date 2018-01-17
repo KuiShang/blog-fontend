@@ -51,6 +51,7 @@ function get (path, data) {
   let url = getUrl(path)
 
   return axios.get(url + '?' + serialize(data)).then(proessData)
+  // return axios.get(url + '?' + serialize(data))
 }
 function post (path, data) {
   let url = getUrl(path)

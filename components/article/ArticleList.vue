@@ -1,8 +1,8 @@
 <template>
   <transition-group name="list" tag="section">
-      <article-item v-for="(article, idx) in {}" :article="article" :key="idx">
+      <article-item v-for="(article, idx) in page.data" :article="article" :key="idx">
       </article-item>
-      <pagination></pagination>
+      <pagination key="pagination"></pagination>
   </transition-group>
 </template>
 <script>

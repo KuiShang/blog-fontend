@@ -1,38 +1,24 @@
 <template>
   <div class="container">
-    <article-list></article-list>
+    <article-list :page="page"></article-list>
   </div>
 </template>
-
 <script>
-// import service from '~/service/ArticleService'
+import service from '~/service/ArticleService'
 import ArticleList from '~/components/article/ArticleList'
-import axios from 'axios'
 export default {
   components: {ArticleList},
   async asyncData ({route: {query: {pageSize, currentPage}}}) {
-    // let page = await service.list(currentPage, pageSize)
-    // console.log(service)
-    console.log('111111111111111111111111111111111111111111111111111111111111111')
-    let page = {}
-    axios.get('http://127.0.0.1:9528/v6/article/list')
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
-    debugger
-    // if (page.data.length === 0) {
-    //   throw new Error('page number error: ' + currentPage)
-    // }
+    let page = await service.list(currentPage, pageSize)
+    // console.log(12)
+    // console.log(page)
     return {
       page: page
     }
   },
   head () {
     return {
-      title: 'blog-name',
+      title: '人生苦短, 我用JavaScript',
       meta: [
         {name: 'description', content: 'meta-description'}
       ]

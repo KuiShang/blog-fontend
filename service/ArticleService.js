@@ -1,6 +1,4 @@
 import dao from './BaseDao'
-import apiConfig from '../service-config'
-
 export default {
   list (currentPage, pageSize, params) {
     return dao.page('v6/article/list', currentPage, pageSize, params)
@@ -9,7 +7,7 @@ export default {
     return dao.get('article/detail/' + id)
   },
   getRender (id) {
-    return dao.get(apiConfig.proxyApi + 'article-render/' + id)
+    return dao.get('v6/article/render/' + id)
   },
   allNames () {
     return dao.get('article/article-map')
