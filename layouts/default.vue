@@ -16,12 +16,7 @@ export default {
 </script>
 
 <style>
-.container
-{
-  margin: 0;
-  width: 100%;
-  text-align: center;
-}
+
 
 .button, .button:visited
 {
@@ -41,11 +36,4 @@ export default {
   background-color: #000;
 }
 
-.title
-{
-  color: #000;
-  font-weight: 300;
-  font-size: 2.5em;
-  margin: 0;
-}
 </style>

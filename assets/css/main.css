@@ -39,7 +39,7 @@
       -webkit-text-size-adjust: 100%;
    }
    body { margin: 0; }
-   a { background: transparent; }
+   a { background: transparent; text-decoration: none;}
    a:focus { outline: thin dotted; }
    a:active, a:hover { outline: 0; }
    h1 { font-size: 2em; margin: 0.67em 0; }
@@ -356,6 +356,34 @@
       background: transparent;
    }
    
+   @-webkit-keyframes bounce {
+        0%, 10%, 25%, 40%, 50% {
+            -webkit-transform: translateY(0) rotate(-180deg);
+                    transform: translateY(0) rotate(-180deg);
+        }
+        20% {
+            -webkit-transform: translateY(-10px) rotate(-180deg);
+                    transform: translateY(-10px) rotate(-180deg);
+        }
+        30% {
+            -webkit-transform: translateY(-5px) rotate(-180deg);
+                    transform: translateY(-5px) rotate(-180deg);
+        }
+    }
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            -webkit-transform: translateY(0) rotate(-180deg);
+                    transform: translateY(0) rotate(-180deg);
+        }
+        40% {
+            -webkit-transform: translateY(-10px) rotate(-180deg);
+                    transform: translateY(-10px) rotate(-180deg);
+        }
+        60% {
+            -webkit-transform: translateY(-5px) rotate(-180deg);
+                    transform: translateY(-5px) rotate(-180deg);
+        }
+    }
    
    /* ==========================================================================
       End of file. Animations should be the last thing here. Do not add stuff

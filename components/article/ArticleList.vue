@@ -1,6 +1,6 @@
 <template>
-  <transition-group name="list" tag="section">
-      <article-item v-for="(article, idx) in page.data" :article="article" :key="idx">
+  <transition-group name="list" tag="section" id="content">
+      <article-item v-for="(article, idx) in page.data" :article="article" :key="idx" class="article-item">
       </article-item>
       <pagination key="pagination"></pagination>
   </transition-group>
@@ -53,4 +53,15 @@ export default {
         opacity: 0;
     }
 }
+
+.article-item {
+  position: relative;
+  width: 80%;
+  max-width: 710px;
+  margin: 4rem auto;
+  padding-bottom: 4rem;
+  border-bottom: #ebf2f6 1px solid;
+  word-wrap: break-word;
+}
+
 </style>
