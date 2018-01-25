@@ -2,7 +2,7 @@
   <header class="main-header">
       <div class="content">
           <h1 class="page-title">KK. Blog</h1>
-          <h2 class="detail">相信技术改变世界，这里记录了我平时的点滴思考和总结</h2>
+          <h2 class="detail">念念不忘，必有回响</h2>
       </div>
       <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45">^
           <span class="hidden">Scroll Down</span>
