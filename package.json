@@ -16,6 +16,8 @@
     "cross-env": "^5.0.1",
     "dateformat": "^3.0.2",
     "express": "^4.15.3",
+    "highlightjs": "^9.10.0",
+    "markdown-it": "^8.4.0",
     "nuxt": "^1.0.0",
     "source-map-support": "^0.4.15"
   },

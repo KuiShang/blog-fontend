@@ -9,8 +9,8 @@
         <p class="summary"> {{article.summary}}</p>
     </section>
     <footer class="footer">
-        <time class="create-by">CREATE: {{article.createTime | date}}</time>
-        <time class="update-by">UPDATE: {{article.updateTime | date}}</time>
+        <time class="create-by">CREATE: {{article.create_time | date}}</time>
+        <time class="update-by">UPDATE: {{article.modify_time | date}}</time>
     </footer>
 </article>
 </template>
