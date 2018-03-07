@@ -1,7 +1,7 @@
 <template>
   <footer class="footer-wrap">
     <span class="coyprights" v-html="content">
-      
+      12
     </span>
   </footer>
 </template>
