@@ -360,28 +360,34 @@
         0%, 10%, 25%, 40%, 50% {
             -webkit-transform: translateY(0) rotate(-180deg);
                     transform: translateY(0) rotate(-180deg);
+                    color: rgba(202, 218, 65, 0.7);
         }
         20% {
             -webkit-transform: translateY(-10px) rotate(-180deg);
                     transform: translateY(-10px) rotate(-180deg);
+                    color: rgba(95, 204, 98, 0.7);
         }
         30% {
             -webkit-transform: translateY(-5px) rotate(-180deg);
                     transform: translateY(-5px) rotate(-180deg);
+                    color: rgba(58, 189, 228, 0.7); 
         }
     }
     @keyframes bounce {
         0%, 20%, 50%, 80%, 100% {
             -webkit-transform: translateY(0) rotate(-180deg);
                     transform: translateY(0) rotate(-180deg);
+                    color: rgba(197, 211, 70, 0.7);
         }
         40% {
             -webkit-transform: translateY(-10px) rotate(-180deg);
                     transform: translateY(-10px) rotate(-180deg);
+                    color: rgba(95, 204, 98, 0.7);
         }
         60% {
             -webkit-transform: translateY(-5px) rotate(-180deg);
                     transform: translateY(-5px) rotate(-180deg);
+                    color: rgba(58, 189, 228, 0.7);
         }
     }
    

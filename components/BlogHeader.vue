@@ -1,17 +1,26 @@
 <template>
-  <header class="main-header">
+  <header class="main-header" ref="header">
       <div class="content">
           <h1 class="page-title">KK. Blog</h1>
           <h2 class="detail">念念不忘，必有回响</h2>
       </div>
-      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45">^
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45" @click="scrollDown">^
           <span class="hidden">Scroll Down</span>
       </a>
   </header>
 </template>
 <script>
+import Animate from '~/utils/tween/animation'
 export default {
-  name: 'blog-header'
+  name: 'blog-header',
+  methods: {
+    scrollDown () {
+      let height = this.$refs.header.offsetHeight
+      Animate(0, height, 'Circ.easeOut', 600, (value) => {
+        document.documentElement.scrollTop = value
+      })
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

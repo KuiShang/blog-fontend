@@ -17,6 +17,7 @@
     "dateformat": "^3.0.2",
     "express": "^4.15.3",
     "highlightjs": "^9.10.0",
+    "jquery": "^3.3.1",
     "markdown-it": "^8.4.0",
     "nuxt": "^1.0.0",
     "source-map-support": "^0.4.15"
@@ -35,6 +36,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.1"
+    "style-loader": "^0.19.1",
+    "velocity-animate": "^1.5.1"
   }
 }
