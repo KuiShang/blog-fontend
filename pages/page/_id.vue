@@ -1,28 +1,27 @@
 <template>
   <div class="container">
+    <pagination key="pagination_up" :page = page></pagination>
     <article-list :page="page"></article-list>
+    <pagination key="pagination_down" :page = page v-show="hasNext"></pagination>
   </div>
 </template>
 <script>
 import service from '~/service/ArticleService'
 import ArticleList from '~/components/article/ArticleList'
-import BlogHeader from '~/components/BlogHeader'
+import Pagination from '~/components/Pagination'
 export default {
-  components: {ArticleList, BlogHeader},
-  async asyncData ({route: {query: {pageSize, currentPage}}}) {
-    let page = await service.list(currentPage, pageSize)
+  components: {ArticleList, Pagination},
+  async asyncData ({route}) {
+    let page = await service.list(Number(route.params.id))
     console.log(page)
-    console.log(456)
     return {
       page: page
     }
   },
-  head () {
-    return {
-      title: '人生苦短, 我用JavaScript',
-      meta: [
-        {name: 'description', content: 'meta-description'}
-      ]
+  computed: {
+    hasNext () {
+      let totalPage = Math.ceil(this.page.total / this.page.page_size)
+      return this.page.current_page < totalPage
     }
   },
   destroyed () {

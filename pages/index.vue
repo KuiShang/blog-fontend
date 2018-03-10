@@ -16,6 +16,7 @@ export default {
     let page = await service.list(currentPage, pageSize)
     console.log(page)
     console.log(123)
+    // this.showLoginError()
     return {
       page: page
     }
@@ -29,6 +30,13 @@ export default {
     }
   },
   destroyed () {
+  },
+  notifications: {
+    showLoginError: { // You can have any name you want instead of 'showLoginError'
+      title: 'Login Failed',
+      message: 'Failed to authenticate',
+      type: 'error' // You also can use 'VueNotifications.types.error' instead of 'error'
+    }
   }
 }
 </script>

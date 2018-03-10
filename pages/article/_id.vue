@@ -14,6 +14,11 @@
       </div>
       </header>
       <section class="content-wrapper">
+        <div class="reprint_tips">
+          <span>摘要: 原创出处：</span>
+          <span >{{url_href}}</span>
+          欢迎转载，保留摘要，谢谢！
+        </div>
         <post-content :content="article.content"/>
       </section>
     </article>
@@ -23,29 +28,35 @@
 import service from '~/service/ArticleService'
 import PostContent from '~/components/article/PostContent'
 import moment from 'moment'
+import Const from '~/utils/const/index.js'
 export default {
-  async asyncData ({ params }) {
-    let article = await service.getRender(params.id)
-    // console.log(12)
-    // console.log(page)
+  async asyncData (context) {
+    let article = await service.getRender(context.params.id)
+    console.log(context)
     return {
-      article: article
+      article: article,
+      url_href: `${Const.HOST_NAME}${context.route.fullPath}`
     }
   },
   components: { PostContent },
-  data () {},
   computed: {
     tagNames () {
       return this.article.tags.map(e => e.name).join(',')
     },
     modify_time () {
       return moment(this.article.modify_time).format('YYYY-MM-DD')
+    },
+    url_href2 () {
+      return `${Const.HOST_NAME}`
     }
   },
   head () {
     return {
       title: this.article.title
     }
+  },
+  mounted () {
+    // console.log('mounted', window.location.href)
   }
 }
 </script>
@@ -87,6 +98,13 @@ export default {
   padding-bottom: 4rem;
   border-bottom: #ebf2f6 1px solid;
   word-wrap: break-word;
+  .reprint_tips {
+    font-size: 14px;
+    padding: 4px 6px;
+    background-color: #ececec;
+    margin: 10px 0;
+    font-style: italic;
+  }
 }
 </style>
 

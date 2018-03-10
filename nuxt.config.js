@@ -21,7 +21,7 @@ module.exports = {
   ** Add axios globally
   */
   build: {
-    vendor: ['axios'],
+    vendor: ['axios', '~/plugins/vue-notifications'],
     loaders: [
       {
         test: /\.(scss|sass)$/,
@@ -49,6 +49,7 @@ module.exports = {
     }
   },
   plugins: [
-    '~plugins/filters'
+    '~plugins/filters',
+    { src: '~/plugins/vue-notifications', ssr: false }
   ]
 }
