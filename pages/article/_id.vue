@@ -32,7 +32,7 @@ import Const from '~/utils/const/index.js'
 export default {
   async asyncData (context) {
     let article = await service.getRender(context.params.id)
-    console.log(context)
+    console.log(article)
     return {
       article: article,
       url_href: `${Const.HOST_NAME}${context.route.fullPath}`
@@ -80,7 +80,7 @@ export default {
     color: white;
     margin: 0 auto;
     width: 80%;
-    max-width: 710px;
+    // max-width: 710px;
     text-align: left;
     padding-top: 10%;
   }
@@ -93,7 +93,7 @@ export default {
   padding-bottom: 0;
   position: relative;
   width: 80%;
-  max-width: 710px;
+  // max-width: 710px;
   margin: 4rem auto;
   padding-bottom: 4rem;
   border-bottom: #ebf2f6 1px solid;

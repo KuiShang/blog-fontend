@@ -56,7 +56,7 @@ export default {
 .article-item {
   position: relative;
   width: 80%;
-  max-width: 710px;
+  /* max-width: 710px; */
   margin: 4rem auto;
   padding-bottom: 4rem;
   border-bottom: #ebf2f6 1px solid;

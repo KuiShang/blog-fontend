@@ -7,6 +7,23 @@ import hljs from 'highlightjs'
 export default {
   props: ['content'],
   methods: {
+    buildContent () {
+      this.$nextTick(() => {
+        this.setImgStyle()
+      })
+    },
+    setImgStyle () {
+      this.$refs.content.querySelectorAll('img').forEach(img => {
+        img.setAttribute(`style`,
+          `position:relative; 
+          display:block; 
+          max-width:100%;
+          height: auto;
+          padding: 0.6em 0;
+          left: 50%;
+          transform: translateX(-50%);`)
+      })
+    }
   },
   computed: {
     htm () {
@@ -23,6 +40,9 @@ export default {
         }
       }).render(this.content)
     }
+  },
+  mounted () {
+    this.buildContent()
   }
 }
 </script>
