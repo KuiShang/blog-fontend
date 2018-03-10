@@ -2,14 +2,13 @@
   <transition-group name="list" tag="section" id="content">
       <article-item v-for="(article, idx) in page.data" :article="article" :key="idx" class="article-item">
       </article-item>
-      <pagination key="pagination"></pagination>
+
   </transition-group>
 </template>
 <script>
 import ArticleItem from './ArticleItem'
-import Pagination from '../Pagination'
 export default {
-  components: {Pagination, ArticleItem},
+  components: {ArticleItem},
   props: ['page', 'params']
 }
 </script>
@@ -57,7 +56,7 @@ export default {
 .article-item {
   position: relative;
   width: 80%;
-  max-width: 710px;
+  /* max-width: 710px; */
   margin: 4rem auto;
   padding-bottom: 4rem;
   border-bottom: #ebf2f6 1px solid;

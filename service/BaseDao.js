@@ -66,9 +66,9 @@ function post (path, data) {
   }
   return axios.post(url, data, opt).then(proessData)
 }
-function page (path, currentPage = 1, pageSize = 10, data = {}) {
-  data.currentPage = currentPage
-  data.pageSize = pageSize
+function page (path, currentPage = 1, pageSize = 5, data = {}) {
+  data.current_page = currentPage
+  data.page_size = pageSize
   return get(path, data)
 }
 

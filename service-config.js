@@ -10,5 +10,4 @@ const proxy = {
   port: isProd ? '' : exports.serverPort
 }
 exports.proxy = proxy
-
 exports.proxyApi = proxy.protocol + proxy.host + `${proxy.port ? ':' + proxy.port : ''}` + '/'

@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const tween = {
   linear: function (t, b, c, d) {
     return c * t / d + b;
@@ -30,25 +31,26 @@ var Animate = function (dom) {
   this.timer = null;
 };
 
-Animate.prototype.start = function (propertyName, endPos, duration, easing) {
+Animate.prototype.start = function (propertyName, startPos, endPos, duration, easing) {
   this.startTime = +new Date; // 动画启动时间
-  this.startPos = this.dom.getBoundingClientRect()[propertyName]; // dom 节点初始位置
+  // this.startPos = this.dom.getBoundingClientRect()[propertyName]; // dom 节点初始位置
+  this.startPos = startPos
   this.propertyName = propertyName; // dom 节点需要被改变的 CSS 属性名
   this.endPos = endPos; // dom 节点目标位置
   this.duration = duration; // 动画持续事件
   this.easing = tween[easing]; // 缓动算法
   var self = this;
-  // var timeId = setInterval(function () { // 启动定时器，开始执行动画
-  //     if (self.step() === false) { // 如果动画已结束，则清除定时器
-  //         clearInterval(timeId);
-  //     }
-  // }, 19);
-  this.timer = window.requestAnimationFrame(function fn() {
-    self.timer = window.requestAnimationFrame(fn);
-    if (self.step() === false) { // 如果动画已结束，则清除定时器
-      cancelAnimationFrame(timer);
-    }
-  })
+  var timeId = setInterval(function () { // 启动定时器，开始执行动画
+      if (self.step() === false) { // 如果动画已结束，则清除定时器
+          clearInterval(timeId);
+      }
+  }, 19);
+  // this.timer = window.requestAnimationFrame(function fn() {
+  //   self.timer = window.requestAnimationFrame(fn);
+  //   if (self.step() === false) { // 如果动画已结束，则清除定时器
+  //     cancelAnimationFrame(self.timer);
+  //   }
+  // })
 };
 
 Animate.prototype.step = function () {
@@ -64,5 +66,8 @@ Animate.prototype.step = function () {
 };
 
 Animate.prototype.update = function (pos) {
-  this.dom.style[this.propertyName] = pos + 'px';
+  // this.dom.style[this.propertyName] = pos + 'px';
+  this.dom[this.propertyName] = pos;
 };
+
+export default Animate
