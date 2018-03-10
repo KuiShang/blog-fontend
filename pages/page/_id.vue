@@ -1,21 +1,18 @@
 <template>
   <div class="container">
-    <blog-header></blog-header>
     <article-list :page="page"></article-list>
-    <pagination key="pagination" :page = page></pagination>
   </div>
 </template>
 <script>
 import service from '~/service/ArticleService'
 import ArticleList from '~/components/article/ArticleList'
 import BlogHeader from '~/components/BlogHeader'
-import Pagination from '~/components/Pagination'
 export default {
-  components: {ArticleList, BlogHeader, Pagination},
+  components: {ArticleList, BlogHeader},
   async asyncData ({route: {query: {pageSize, currentPage}}}) {
     let page = await service.list(currentPage, pageSize)
     console.log(page)
-    console.log(123)
+    console.log(456)
     return {
       page: page
     }
