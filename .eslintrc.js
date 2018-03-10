@@ -10,7 +10,7 @@ module.exports = {
   plugins: [
     'html'
   ],
-  // add your custom rules here
+  // add  your custom rules here
   rules: {
     'no-debugger':  0
   },

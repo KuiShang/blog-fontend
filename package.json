@@ -1,7 +1,7 @@
 {
   "name": "nuxt_express",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "Nuxt.js blog project",
   "author": "kk <shangkuikui@gomeplus.com>",
   "private": true,
   "scripts": {
