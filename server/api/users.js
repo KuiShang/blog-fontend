@@ -6,7 +6,7 @@ const router = Router()
 const users = [
   { name: 'Alexandre' },
   { name: 'Pooya' },
-  { name: 'Sébastien' },
+  { name: 'Sébastien' }
 ]
 
 const tips = {'warn': `本台server只是提供支持nuxt服务端渲染的服务，并不提供数据服务，所以本服务器并不需要提供路由，或者其他接口，
