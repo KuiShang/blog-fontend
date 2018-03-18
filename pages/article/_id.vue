@@ -45,9 +45,6 @@ export default {
     },
     modify_time () {
       return moment(this.article.modify_time).format('YYYY-MM-DD')
-    },
-    url_href2 () {
-      return `${Const.HOST_NAME}`
     }
   },
   head () {
@@ -69,6 +66,7 @@ export default {
   margin-bottom: 5rem;
   text-align: center;
   background: #222 no-repeat center center;
+  background-image: url(~/assets/img/blog_title.jpeg);
   background-size: cover;
   overflow: hidden;
   height: 45vh;
