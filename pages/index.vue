@@ -10,6 +10,7 @@ import service from '~/service/ArticleService'
 import ArticleList from '~/components/article/ArticleList'
 import BlogHeader from '~/components/BlogHeader'
 import Pagination from '~/components/Pagination'
+
 export default {
   components: {ArticleList, BlogHeader, Pagination},
   async asyncData ({route: {query: {pageSize, currentPage}}}) {
@@ -36,6 +37,17 @@ export default {
       title: 'Login Failed',
       message: 'Failed to authenticate',
       type: 'error' // You also can use 'VueNotifications.types.error' instead of 'error'
+    }
+  },
+  mounted () {
+  /*eslint-disable*/
+    if (navigator.serviceWorker != null) {
+      console.log(6666666)
+      navigator.serviceWorker.register('/_nuxt/service-worker.js', {scope: '/_nuxt/'})
+        .then(function(registration) {
+          console.log('Registered events at scope: ', registration.scope);
+          console.log(registration)
+        });
     }
   }
 }

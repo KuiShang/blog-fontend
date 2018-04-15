@@ -1,3 +1,6 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const path = require('path')
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 module.exports = {
   /*
   ** Headers of the page
@@ -33,6 +36,12 @@ module.exports = {
           loader: 'sass-loader'
         }]
       }
+    ],
+    plugins: [
+      new CopyWebpackPlugin([
+        { from: 'plugins/pwa/service-worker.js', to: './' },
+        { from: 'plugins/pwa/manifest.json', to: './' }
+      ])
     ],
     /*
     ** Run ESLINT on save

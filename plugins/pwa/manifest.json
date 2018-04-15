@@ -1,0 +1,8 @@
+{
+    "name": "Best wishes for you",
+    "short_name": "kk.blog",
+    "display": "standalone",
+    "start_url": "/",
+    "theme_color": "#8888ff",
+    "background_color": "#aaaaff"
+  }

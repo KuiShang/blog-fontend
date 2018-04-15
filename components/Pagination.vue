@@ -66,7 +66,7 @@ export default {
 .pagination {
   position: relative;
   width: 80%;
-  max-width: 710px;
+  max-width: 1000px;
   margin: 4rem auto;
   font-family: "Open Sans", sans-serif;
   font-size: 1.3rem;

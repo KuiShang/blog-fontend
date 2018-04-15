@@ -8,10 +8,12 @@ let options = {}
 
 axios.interceptors.request.use((req) => {
   console.log('请求前')
+  return req
 })
 
 axios.interceptors.response.use((res) => {
   console.log('请求后')
+  return res
 })
 
 export default axios.create(options)

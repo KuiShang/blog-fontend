@@ -5,12 +5,17 @@ import api from './api'
 
 const app = express()
 const host = process.env.HOST || '127.0.0.1'
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 80
 
 app.set('port', port)
 
 // Import API Routes
 app.use('/api', api)
+
+// app.get('/aa', function (req, res) {
+//   res.send('Hello World666')
+// })
+// app.use('/', express.static('/public'))
 
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
@@ -29,5 +34,10 @@ if (config.dev) {
 app.use(nuxt.render)
 
 // Listen the server
-app.listen(port, host)
-console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
+// app.listen(host)
+// console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
+var server = app.listen(port, () => {
+  var host = server.address().address
+  var port = server.address().port
+  console.log('Example app listening at http://%s:%s', host, port)
+})
