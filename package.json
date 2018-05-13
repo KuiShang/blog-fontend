@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "chalk": "^2.4.1",
     "cross-env": "^5.0.1",
     "dateformat": "^3.0.2",
     "express": "^4.15.3",
